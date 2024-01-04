@@ -4,11 +4,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class JpaController {
+public class JpaApiController {
 
-    @GetMapping("/hello")
-    public String hello() {
-        return "hello";
+    @GetMapping("/jpa")
+    public String jpa() {
+        return "jpa";
     }
 
 }
