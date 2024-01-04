@@ -25,13 +25,16 @@ class MemberRepositoryTest {
     @Rollback(value = false)
     @DisplayName("회원 등록")
     void save() {
+        // given
         Member member = new Member("interface 회원");
         Member savedMember = memberRepository.save(member);
 
+        // when
         Member findMember = memberRepository.findById(savedMember.getId()).orElseThrow(() -> new RuntimeException("회원 정보가 없습니다."));
+
+        // then
         assertThat(findMember.getId()).isEqualTo(member.getId());
         assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
         assertThat(findMember).isEqualTo(member);
     }
-
 }
