@@ -47,7 +47,7 @@ class MemberTest {
             System.out.println("\t");
             System.out.println("member : " + member);
             System.out.println("\t");
-            System.out.println("member.team : " + member.getTeam());
+//            System.out.println("member.team : " + member.getTeam());
             System.out.println("\t");
         }
     }
