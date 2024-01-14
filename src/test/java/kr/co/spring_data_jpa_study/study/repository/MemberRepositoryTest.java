@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MemberRepositoryTest {
 
     @Autowired
-    MemberRepository memberRepository;
+    MemberJpaRepository memberJpaRepository;
 
     @Test
     @Transactional
@@ -28,10 +28,10 @@ class MemberRepositoryTest {
     void save() {
         // given
         Member member = new Member("interface 회원");
-        Member savedMember = memberRepository.save(member);
+        Member savedMember = memberJpaRepository.save(member);
 
         // when
-        Member findMember = memberRepository.findById(savedMember.getId()).orElseThrow(() -> new RuntimeException("회원 정보가 없습니다."));
+        Member findMember = memberJpaRepository.findById(savedMember.getId()).orElseThrow(() -> new RuntimeException("회원 정보가 없습니다."));
 
         // then
         assertThat(findMember.getId()).isEqualTo(member.getId());
