@@ -24,7 +24,7 @@ public abstract class Item {
 
     private String name;
     private int price;
-    private int stockQuantity;  // 재고
+    private int stockQuantity;  // 재고 수량
 
     @ManyToMany(mappedBy = "items")
     private List<Category> categories = new ArrayList<>();
