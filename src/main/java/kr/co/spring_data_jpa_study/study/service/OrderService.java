@@ -8,9 +8,12 @@ import kr.co.spring_data_jpa_study.study.entity.item.Item;
 import kr.co.spring_data_jpa_study.study.repository.ItemRepository;
 import kr.co.spring_data_jpa_study.study.repository.MemberRepository;
 import kr.co.spring_data_jpa_study.study.repository.OrderRepository;
+import kr.co.spring_data_jpa_study.study.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -56,5 +59,9 @@ public class OrderService {
         
         // 주문 취소
         order.cancel();
+    }
+
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAllByString(orderSearch);
     }
 }

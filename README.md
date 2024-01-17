@@ -13,6 +13,11 @@
       + mac : 정리 예정
     + 이후 부터는 <U>**jdbc:h2:tcp://localhost/~/spring-data-jpa-test**</U> 로 접속
 
++ ### API
+  + API를 만들 때 파라미터와 return 값을 Entity로 사용해선 안된다.
+    + Entity 값이 변경되면 운영 이슈가 터지가 떄문.
+    + Entitu 안의 연관관계가 매핑되어있는 불필요한 값도 노출이 된다.
+
 + ### Spring-Data-Jpa
   + Repository 생성시 JpaRepository<T, ID> 을 상속받는다.
     + 지원 메서드 :
