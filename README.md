@@ -34,4 +34,4 @@
 
 + ### 페이징
   + @ManyToOne, @OneToOne은 fetch join 사용
-  + @OneToMany, @ManyToMany는 <U>**default-batch-fetch-size**</U> 사용 후 따로 조회한다. 
+  + @OneToMany, @ManyToMany는 <U>**default-batch-fetch-size**</U> 사용 후 따로 조회한다.  
