@@ -27,14 +27,8 @@ public class OrderRepository {
         return em.find(Order.class, id);
     }
 
-    public List<Order> findAll(OrderSearch orderSearch) {
-        return em.createQuery("select o from Order o join o.member m" +
-                                " where o.status = :status" +
-                                " and m.username like :name", Order.class)
-                .setParameter("status", orderSearch.getOrderStatus())
-                .setParameter("name", orderSearch.getMemberName())
-//                .setFirstResult(100)    // 100부터
-                .setMaxResults(1000)    // 최대 1000건
+    public List<Order> findAll() {
+        return em.createQuery("select o from Order o", Order.class)
                 .getResultList();
     }
 
