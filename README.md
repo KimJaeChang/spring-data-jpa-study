@@ -77,4 +77,4 @@
     + 예)
       + OrderService
         + OrderService : 핵심 비즈니스 로직
-        + OrderQueryService : 화면이나 API에 맞춘 서비스 (주로 읽기 전용 트랜잭션 사용) 
+        + OrderQueryService : 화면이나 API에 맞춘 서비스 (주로 읽기 전용 트랜잭션 사용)  
